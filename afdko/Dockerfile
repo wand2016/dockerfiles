@@ -21,3 +21,5 @@ RUN pip install afdko
 ENV PATH $PATH:/root/afdko/afdko_env/bin
 
 WORKDIR /root
+
+ENTRYPOINT ["bash"]
