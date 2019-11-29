@@ -6,7 +6,6 @@ FROM php:7.3-cli-alpine AS work
 ENV COMPOSER_ALLOW_SUPERUSER 1
 ENV COMPOSER_HOME /.composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
-RUN composer global require hirak/prestissimo
 
 # ----------------------------------------
 # install build-dependencies
@@ -24,6 +23,9 @@ RUN pecl install ast
 RUN composer global require phan/phan
 
 
+# ----------------------------------------
+# artifact
+# ----------------------------------------
 FROM php:7.3-cli-alpine
 
 ENV COMPOSER_ALLOW_SUPERUSER 1
