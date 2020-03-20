@@ -2,7 +2,8 @@ FROM python:3.8-alpine
 
 RUN apk update && \
     apk add --no-cache --virtual build-dependencies \
-    gcc \
+    gcc
+RUN apk add --no-cache \
     libressl-dev \
     musl-dev \
     libffi-dev
